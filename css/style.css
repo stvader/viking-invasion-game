@@ -1,0 +1,441 @@
+html,
+body,
+canvas,
+header,
+h1,
+h2,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+	font-family: Arial, sans-serif;
+}
+
+/* --------- fonts ----------- */
+
+@font-face {
+font-family: "Exocet";
+	src: url("../fonts/exocet-heavy.ttf");	
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+font-family: "Rune";
+	src: url("../fonts/rune.ttf");	
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ----- style for game ----- */
+
+.page-overlay {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	background-image: url(../img/page-bg.jpg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.game-container {
+	position: relative;
+	width: 1200px;
+	margin: auto;
+	//box-sizing: border-box;
+}
+
+.game-canvas {
+	background-color: green;
+	border: 4px solid #000000;
+
+}
+
+.btn {
+	width: 300px;
+	height: 50px;
+	background-color: red;
+	line-height: 50px;
+	text-align: center;
+	border: none;
+	outline: none;
+	font-family: Arial, sans-serif;
+	font-size: 3rem;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.gameover-block {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding-top: 170px;
+	box-sizing: border-box;
+}
+
+.gameover-block--active {
+	display: block;
+}
+
+.gameover-header {
+	margin-bottom: 100px;
+	text-align: center;
+	font-size: 4rem;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.gameover-overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, .7);
+}
+
+.gameover-overlay--active {
+	display: block;
+}
+
+.winner-block {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding-top: 170px;
+	box-sizing: border-box;
+}
+
+.winner-block--active {
+	display: block;
+}
+
+.winner-head {
+	margin-bottom: 100px;
+	text-align: center;
+	font-size: 5rem;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	color: red;
+	text-transform: uppercase;
+}
+
+.weapon-counter {
+	position: absolute;
+	width: 120px;
+	height: 60px;
+	top: 0;
+	left: 0;
+	
+	background-color: transparent;
+	display: flex;
+	flex-direction: row;
+
+}
+
+.axe-image {
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	background-image: url(../img/axe-slider.png);
+	background-position: -133px -4px;
+}
+
+.weapon-counter-num {
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	font-family: "Exocet", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 5.4rem;
+	color: #000000;
+	line-height: 60px;
+}
+
+.image-display {
+	display: none;
+}
+
+.sound {
+	display: none;
+}
+
+
+/* --------styles for landing page -------- */
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.container::after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.page-header {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	padding-top: 20px;
+	background-color: #2b2323;
+}
+
+.logo-link {
+	float: left;
+
+}
+
+.page-head {
+	font-family: "Exocet";
+	font-weight: normal;
+	font-size: 3rem;
+	color: #ffffff;
+}
+
+.main-menu {
+	float: right;
+}
+
+.main-menu__link {
+	display: inline-block;
+	position: relative;
+	margin-right: 17px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.main-menu__link:last-child {
+	margin-right: 0;
+}
+
+.main-menu__link:hover,
+.main-menu__link:active {
+	color: #c82b2b;	
+}
+
+.main-menu__link:hover::after,
+.main-menu__link:active::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #c82b2b;
+}
+
+.poster {
+	width: 100%;
+	height: 550px;
+	padding-top: 300px;
+	box-sizing: border-box;
+	background-image: url(../img/poster.jpg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.poster__head {
+	text-align: right;	
+	margin-right: 80px;
+	font-family: "Rune";
+	font-size: 8rem;
+	color: #bf0707;
+}
+
+.section-type {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.section-head {
+	margin-bottom: 40px;
+	font-family: "Exocet";
+	font-size: 5rem;
+	font-weight: bold;
+	color: #3b3b3b;
+	text-transform: uppercase;
+}
+
+.text-type {
+	font-size: 1.8rem;
+	color: #2d2d2d;
+}
+
+.about-block__container {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.control-manual__key-block {
+	margin-bottom: 15px;
+}
+
+.control-manual__img,
+.control-manual__descr {
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+.control-manual__img {
+	height: 50px;
+}
+
+.control-manual__descr {
+	font-size: 2.5rem;
+	font-weight: bold;
+	color: #0b0b0b;
+}
+
+.screenshots__container {
+	font-size: 0;
+}
+
+.screenshots__image {
+	display: inline-block;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+.screenshots__image:nth-child(2n+1) {
+	margin-right: 20px;
+}
+
+.play-block__plague {
+	margin-bottom: 50px;
+}
+
+.play-block__link-game {
+	display: block;
+	width: 200px;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;		
+	box-sizing: border-box;
+	background-color: #c82b2b;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 60px;
+	color: #ffffff;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.play-block__link-game:hover {
+	opacity: .8;
+}
+
+.developer-info {
+	padding-bottom: 75px;
+}
+
+.developer-info__descr-block {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.developer-info__photo {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.developer-info__description {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.developer-info__dev-name {
+	margin-bottom: 10px;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #1c1c1c;
+}
+
+.developer-info__profesion {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	font-weight: normal;
+	color: #0f0f0f;
+}
+
+.developer-info__solcail-link {
+	display: inline-block;
+	margin-right: 5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #000000;
+	text-align: center;
+	font-size: 3rem;
+	color: #ffffff;
+	line-height: 50px;
+}
+
+.developer-info__sosials {
+	display: block;
+}
+
+
+
+.developer-info__solcail-link:last-child {
+	margin-right: 0;
+}
+
+.developer-info__solcail-link:hover {
+	opacity: .85;
+}
+
+.page-footer {
+	width: 100%;
+	height: 60px;
+	background-color: #d6d6d6;
+}
+
+.copyright {
+	font-size: 1.5rem;
+	font-weight: normal;
+	color: #0a0a0a;
+	line-height: 60px;
+}
