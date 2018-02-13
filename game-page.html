@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Viking Invasion</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="page-overlay">
+		<div class="game-container">
+			<canvas id="game-canvas" class="game-canvas" width="1200" height="660">
+			</canvas>
+
+			<div class="weapon-counter">
+				<div class="axe-image"></div>
+				<span class="weapon-counter-num" id="weapon-counter"></span>
+			</div>
+
+			<div class="gameover-overlay" id="gameover-overlay"></div>
+			<div class="gameover-block" id="gameover-block">
+				<h2 class="gameover-header">
+					Game Over
+				</h2>
+				<button class="btn" type="button" id="reset-btn">
+					Try Again
+				</button>
+			</div>
+			<div class="winner-block" id="winner-block">
+				<h2 class="winner-head">
+					You won!!!
+				</h2>
+				<button class="btn btn" id="start-again-btn">
+					Play Again
+				</button>
+			</div>
+		</div>
+	</div>
+	<img src="img/bg-slide.png" alt="" id="bg-slider" class="image-display">
+	<img src="img/ragnar-slider.png" alt="" id="hero-slider" class="image-display">
+	<img src="img/enemy-slider.png" alt="" id="enemy-slider" class="image-display">
+	<img src="img/axe-slider.png" alt="" id="weapon-slider" class="image-display">
+
+	<audio src="sound/win-scream.mp3" class="sound" id="win-scream"></audio>
+	<audio src="sound/axe-flying.flac" class="sound" id="axe-flying"></audio>	
+	<audio src="sound/hero-step.flac" class="sound" id="sound-step"></audio>
+	<audio src="sound/enemy-sword.flac" class="sound" id="enemy-sword"></audio>
+	<audio src="sound/enemy-death.mp3" class="sound" id="enemy-death"></audio>
+	<audio src="sound/hero-death.mp3" class="sound" id="hero-death"></audio>	
+
+	<audio src="sound/villeman-og-magnhild.mp3" class="sound" id="bg-music"></audio>
+
+	<script src="bundle.js"></script>
+</body>
+</html>
